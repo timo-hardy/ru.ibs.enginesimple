@@ -12,7 +12,7 @@ import ru.ibs.enginesimple.service.PetrolEngineService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/petrols")
+@RequestMapping("/petrol")
 public class PetrolEngineController {
     private final PetrolEngineService petrolEngineService;
 
@@ -21,7 +21,7 @@ public class PetrolEngineController {
         this.petrolEngineService = petrolEngineService;
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllPetrol")
     public List<PetrolEngine> getAll() {
         return petrolEngineService.findAll();
     }

@@ -8,7 +8,7 @@ import ru.ibs.enginesimple.repository.DieselEngineRepository;
 import java.util.List;
 
 @Service
-public class DieselEngineServiceImpl {
+public class DieselEngineServiceImpl implements DieselEngineService {
     private final DieselEngineRepository dieselEngineRepository;
 
     @Autowired
@@ -16,10 +16,17 @@ public class DieselEngineServiceImpl {
         this.dieselEngineRepository = dieselEngineRepository;
     }
 
+    @Override
+    public void powerUp() {
+        System.out.println("Fuel - diesel");
+    }
+
+    @Override
     public List<DieselEngine> findAll() {
         return dieselEngineRepository.findAll();
     }
 
+    @Override
     public void add(DieselEngine dieselEngine) {
         dieselEngineRepository.save(dieselEngine);
     }
