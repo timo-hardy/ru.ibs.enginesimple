@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class PetrolEngine extends Engine{
+public class PetrolEngine implements Engine{
     @Id
     @GeneratedValue
     private int id;
