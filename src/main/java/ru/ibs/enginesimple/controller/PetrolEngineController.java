@@ -28,7 +28,6 @@ public class PetrolEngineController {
 
     @RequestMapping
     public void add(@RequestBody PetrolEngine petrolEngine) {
-        // TODO: 06.11.2021
         petrolEngineService.add(petrolEngine);
     }
 }

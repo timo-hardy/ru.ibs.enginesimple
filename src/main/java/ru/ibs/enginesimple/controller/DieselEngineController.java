@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.ibs.enginesimple.domain.DieselEngine;
 import ru.ibs.enginesimple.domain.PetrolEngine;
+import ru.ibs.enginesimple.service.DieselEngineService;
 import ru.ibs.enginesimple.service.PetrolEngineService;
 
 import java.util.List;
@@ -14,23 +16,21 @@ import java.util.List;
 @RequestMapping("/diesel")
 public class DieselEngineController {
 
-    public class PetrolEngineController {
-        private final PetrolEngineService petrolEngineService;
+    private final DieselEngineService dieselEngineService;
 
-        @Autowired
-        public PetrolEngineController(PetrolEngineService petrolEngineService) {
-            this.petrolEngineService = petrolEngineService;
-        }
+    @Autowired
+    public DieselEngineController(DieselEngineService dieselEngineService) {
+        this.dieselEngineService = dieselEngineService;
+    }
 
-        @GetMapping("/getAllDiesel")
-        public List<PetrolEngine> getAll() {
-            return petrolEngineService.findAll();
-        }
+    @GetMapping("/getAllDiesel")
+    public List<DieselEngine> getAll() {
+        return dieselEngineService.findAll();
+    }
 
-        @RequestMapping
-        public void add(@RequestBody PetrolEngine petrolEngine) {
-            // TODO: 06.11.2021
-            petrolEngineService.add(petrolEngine);
-        }
+    @RequestMapping
+    public void add(@RequestBody DieselEngine dieselEngine) {
+        // TODO: 06.11.2021
+        dieselEngineService.add(dieselEngine);
     }
 }
